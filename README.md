@@ -20,7 +20,7 @@ Codewhale's own `codewhale web` client is loopback-only by design, and upstream 
 
 - Leave Codewhale working on a task 24/7 without keeping your laptop open
 - Run cheap long agent sessions on DeepSeek, or any OpenRouter model, from an iPad, Chromebook or phone
-- `codewhale exec "..."` for scripted, headless agent runs next to your repos
+- `codewhale exec --auto "..."` for scripted, headless agent runs next to your repos
 - A persistent root workspace with a stable IP for side projects, scraping and CI debugging
 
 ## Dependencies for Codewhale Hosting
@@ -57,7 +57,7 @@ Codewhale's own `codewhale web` client is loopback-only by design, and upstream 
 Notes and limits:
 
 - You are root. Anything you install outside `/root` disappears on redeploy. Anything under `/root` stays.
-- 1 GB of RAM covers Codewhale itself. Give the service more if the agent runs heavy builds or test suites.
+- It is light: the box idles under 50 MB of RAM and Codewhale uses about 100 MB while working. Give the service more if the agent runs heavy builds or test suites.
 - There is no Docker daemon inside the box, and Codewhale's OS sandbox and Computer Use tools do not apply in a headless container.
 - The web terminal password is the whole security model for a root shell. Keep it strong and do not share the URL.
 
