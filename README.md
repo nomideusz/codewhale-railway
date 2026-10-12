@@ -1,6 +1,6 @@
 # Deploy and Host Codewhale on Railway
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/codewhale?utm_medium=integration&utm_source=button&utm_campaign=codewhale)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/codewhale?referralCode=sLjDXb&utm_medium=integration&utm_source=button&utm_campaign=codewhale)
 
 [Codewhale](https://github.com/Hmbown/Codewhale) (formerly `deepseek-tui`) is an open-source coding agent written in Rust. It reads your project, edits files, runs commands and checks its own work, using DeepSeek, OpenRouter, Anthropic, OpenAI, Kimi or any other provider you connect. This template runs it on an always-on Ubuntu 24.04 box that you reach from a terminal in your browser or over SSH. Your home directory lives on a volume, so repos, Codewhale config and sessions survive every redeploy.
 
