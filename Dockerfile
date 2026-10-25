@@ -1,5 +1,8 @@
 FROM ubuntu:24.04
 
+# upgrade: github Hmbown/Codewhale
+ARG CODEWHALE_VERSION=v0.10.2
+
 ENV DEBIAN_FRONTEND=noninteractive LANG=C.UTF-8 PORT=7681
 
 # Base toolbox: shell tools, ssh server, ttyd web terminal, build deps.
@@ -14,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" \
        > /etc/apt/sources.list.d/github-cli.list \
   && apt-get update && apt-get install -y --no-install-recommends nodejs gh \
-  && curl -fsSL https://github.com/Hmbown/Codewhale/releases/latest/download/codewhale-linux-x64.tar.gz \
+  && curl -fsSL https://github.com/Hmbown/Codewhale/releases/download/${CODEWHALE_VERSION}/codewhale-linux-x64.tar.gz \
        | tar xz -C /usr/local/bin --strip-components=1 codewhale-linux-x64/codewhale codewhale-linux-x64/codew \
   && curl -LsSf https://astral.sh/uv/install.sh | UV_INSTALL_DIR=/usr/local/bin sh \
   && mkdir -p /run/sshd \
